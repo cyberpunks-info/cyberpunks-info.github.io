@@ -21,7 +21,13 @@ description: >
   TODO - Write description!
 
 # Posts
-permalink: :year/:month/:day/:title/
+permalink: :categories/:year-:month-:day/:title/
+
+# Collections
+collections:
+  authors:
+    output: true
+    permlink: /authors/:path/
 
 # Build settings
 markdown: kramdown

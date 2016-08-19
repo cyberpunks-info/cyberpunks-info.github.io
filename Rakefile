@@ -1,40 +1,43 @@
-task :serve do
-  system "bundle exec jekyll serve"
+# A wrapper for the inkscape command-line.
+# On OSX it only likes absolute paths.
+def inkscape input, output, height: 64
+  sh "inkscape '#{File.absolute_path input}' -h #{height} -e '#{File.absolute_path output}'"
 end
 
-task :build do
-  system "bundle exec jekyll build"
+# Require multiple gems on a single line
+def require_all *gems
+  gems.each {|req_gem| require req_gem}
 end
 
+desc "Serve the site through jekyll"
+task :serve do; sh "bundle exec jekyll serve"; end
+
+desc "Build the site through jekyll"
+task :build do; sh "bundle exec jekyll build"; end
+
+desc "Output and optimize the site favicon"
 task :favicon do
-  # The Inkscape command-line on OSX only likes absolute paths
-  input   = File.absolute_path "_resources/favicon.svg"
-  output  = File.absolute_path "img/favicon.png"
-  
+  output = "img/favicon.png"
+
   # Export the image at the default 64x resolution
-  system "inkscape #{input} -e #{output}"
+  inkscape "_resources/favicon.svg", output
 
   # And optimize
-  system "optipng -o7 #{output}"
+  sh "optipng -o7 #{output}"
 end
 
 task :compressor do
-  require "open-uri"
-  require "json"
-  require "zipruby"
-  
+  require_all "open-uri", "json", "zipruby"
+
   url = "https://api.github.com/repos/penibelst/jekyll-compress-html/releases"
   output = "_layouts/compress.html"
 
-  puts "Accessing github api..."
-
   # Get releases for the compressor
+  puts "Accessing github api..."
   latest = JSON.load(open(url).read).first
-  
-
-  puts "Downloading #{latest["name"]}..."
 
   # Download the latest zip release
+  puts "Downloading #{latest["name"]}..."
   zip = latest["assets"].first["browser_download_url"]
   archive = Zip::Archive.open_buffer(open(zip).read)
 

@@ -2,17 +2,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
   <title>
     {{ site.title | escape }}
-    {% if page.title %}
+    {% if page.title and page.title != site.title %}
       | {{ page.title | escape }}
     {% endif %}
   </title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
   <link rel="shortcut icon" href="/img/favicon.png">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' }}">
+  <link rel="canonical" href="{{ page.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="/feed.xml">
 </head>
