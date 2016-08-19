@@ -115,7 +115,6 @@
 
 .footer-col-1 { @include width-calc(35%); }
 .footer-col-2 { @include width-calc(20%); }
-
 .footer-col-3 { @include width-calc(45%); }
 
 @include media-query($on-laptop) {

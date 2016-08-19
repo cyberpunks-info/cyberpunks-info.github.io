@@ -55,7 +55,7 @@ a {
     color: $brand;
     text-decoration: none;
 
-    &:visited { color: darken($brand, 15%);   }
+    &:visited { color: darken($brand, 10%);   }
     &:hover   { color: lighten($brand, 10%);  }
 }
 
