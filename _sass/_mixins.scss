@@ -1,0 +1,25 @@
+// Minima also includes a mixin for defining media queries.
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@mixin width-calc($width) {
+  width: calc(#{$width} - (#{$spacing-unit} / 2));
+}
+
+@mixin font-scaler($size, $laptop-size) {
+  font-size: $size;
+
+  @include media-query($on-laptop) {
+      font-size: $laptop-size;
+  }
+}
