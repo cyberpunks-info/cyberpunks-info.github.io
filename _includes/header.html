@@ -11,7 +11,7 @@
 
       <div class="trigger">
         {% for page in site.pages %}
-          {% if page.title %}
+          {% if page.title and page.name != "404.md" %}
           <a class="page-link" href="{{ page.url }}">{{ page.title | escape }}</a>
           {% endif %}
         {% endfor %}
