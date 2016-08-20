@@ -39,7 +39,7 @@
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
-        background-color: $dark;
+        background-color: lighten($background, 5%);
         border-radius: 5px;
         text-align: right;
 

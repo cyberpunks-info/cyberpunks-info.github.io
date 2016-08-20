@@ -4,7 +4,6 @@
 @charset "utf-8";
 
 // Variables
-
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -13,7 +12,6 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 // Colours
-
 @import "colours";
 
 $light: $mono_1;
@@ -34,5 +32,4 @@ $on-laptop:        800px;
   "mixins",
   "base",
   "layout",
-  "syntax-highlighting"
-;
+  "syntax-highlighting";
