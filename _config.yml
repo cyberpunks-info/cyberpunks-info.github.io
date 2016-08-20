@@ -29,6 +29,19 @@ collections:
     output: true
     permlink: /authors/:path/
 
+# Defaults
+defaults:
+  -
+    scope:
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      type: authors
+    values:
+      layout: author
+
 # Build settings
 markdown: kramdown
 theme: minima
@@ -37,6 +50,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Rakefile
+  - mkmf.log
 
 sass:
   style: compressed
