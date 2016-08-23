@@ -50,7 +50,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Rakefile
-  - mkmf.log
 
 sass:
   style: compressed

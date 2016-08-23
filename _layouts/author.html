@@ -1,9 +1,15 @@
 ---
 layout: page
 ---
+<div class="author_image">
+  {% include authors/image.html author=page %}
+</div>
+
+<p>{{ page.description }}</p>
 
 <h2>Posts</h2>
 <ul class="post-list">
+
 {% for post in site.posts %}
   {% if page.name == post.author %}
     {% include post.html post=post %}

@@ -21,9 +21,13 @@ task :favicon do
 
   # Export the image at the default 64x resolution and optimize
   Images.inkscape "_resources/favicon.svg", output
-  Images.optimize output
+  Images::Optimize.pngs output
 end
 
 task :compressor do
   download_compressor
+end
+
+task :authors do
+  Images.authors
 end
