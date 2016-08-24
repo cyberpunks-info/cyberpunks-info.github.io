@@ -19,7 +19,7 @@ github_username: cyberpunks-info
 repo: https://github.com/cyberpunks-info/cyberpunks-info.github.io
 
 description: >
-  TODO - Write description!
+  A multi-user blogging site about technology and stuff.
 
 # Posts
 permalink: :categories/:year-:month-:day/:title/
