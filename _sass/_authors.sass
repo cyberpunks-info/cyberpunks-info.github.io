@@ -1,15 +1,18 @@
 .author_image
   display: inline-block
 
+  &:hover
+    a p 
+      color: lighten($brand, 10%)
+    a img
+      border-color: lighten($brand, 10%)
+
   img
     margin: 5px
 
     border: 5px solid
     border-radius: 100%
     border-color: $brand
-
-    &:hover
-      border-color: lighten($brand, 10%)
 
   p
     text-align: center

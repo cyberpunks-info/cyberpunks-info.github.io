@@ -1,5 +1,10 @@
+# Jekyll testing
 _site
+_drafts
+
+# Jekyll metadata
 .sass-cache
 .jekyll-metadata
-mkmf.log
+
+# Vim files
 *.swp

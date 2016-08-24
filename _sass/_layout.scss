@@ -16,7 +16,7 @@
     margin-bottom: 0;
     float: left;
 
-    &, &:visited {
+    &, &:visited, &:hover {
         color: $dark;
     }
 }

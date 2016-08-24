@@ -125,3 +125,10 @@ pre {
 
     path { fill: $brand; }
 }
+
+hr {
+  background-color: $brand;
+  border: 0;
+  height: 2px;
+  margin: 10px 0;
+}
